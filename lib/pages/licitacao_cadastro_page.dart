@@ -59,7 +59,6 @@ class _LicitacaoCadastroPageState extends State<LicitacaoCadastroPage> {
   }
 
   SizedBox _buildButton() {
-    final provider = Provider.of<LicitacoesParticipando>(context);
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(

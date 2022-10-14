@@ -2,6 +2,7 @@
 import 'package:challangesprint4/models/licitacoesParticipando.dart';
 import 'package:challangesprint4/pages/licitacao_cadastro_page.dart';
 import 'package:challangesprint4/pages/licitacao_detalhe_page.dart';
+import 'package:challangesprint4/pages/pagina_inicio.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.purple,
         ),
         routes: {
-          '/': (context) => const HomePage(),
+          '/': (context) => PaginaInicio(),
+          'licitacao-lista': (context) => HomePage(),
           '/licitacao-cadastro':(context) =>  LicitacaoCadastroPage(),
           '/licitacao-detalhes': (context) => const LicitacaoDetalhePage()
         },

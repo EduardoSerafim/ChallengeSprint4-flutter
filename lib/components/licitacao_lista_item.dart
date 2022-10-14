@@ -5,8 +5,9 @@ import '../models/licitacao.dart';
 
 class LicitacaoListaItem extends StatelessWidget {
   final Licitacao licitacao;
-  const LicitacaoListaItem({Key? key, required this.licitacao})
+  const LicitacaoListaItem({Key? key, required this.licitacao, List<Licitacao>? licitacoes})
       : super(key: key);
+  
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class LicitacaoListaItem extends StatelessWidget {
       
       onTap: () {
         Navigator.pushNamed(context, '/licitacao-detalhes',
-            arguments: licitacao);
+            arguments: licitacao,);
       },
     );
   }

@@ -44,6 +44,7 @@ class _LicitacaoListaPageState extends State<LicitacaoListaPage> {
           }
           if (snapshot.connectionState == ConnectionState.done) {
             final licitacoes = snapshot.data ?? [];
+            
             return ListView.separated(
               itemCount: licitacoes.length,
               itemBuilder: (context, index) {
@@ -52,24 +53,6 @@ class _LicitacaoListaPageState extends State<LicitacaoListaPage> {
                     endActionPane: ActionPane(
                       motion: const ScrollMotion(),
                       children: [
-                        SlidableAction(
-                          onPressed: (context) async {
-                            await _licitacaoRepository
-                                .removerLicitacao(licitacao.id!);
-                            ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                    content: Text(
-                                        "Licitação removida com sucesso")));
-                            setState(() {
-                              licitacoes.removeAt(index);
-                              provider.remove(licitacao);
-                            });
-                          },
-                          backgroundColor: Colors.red,
-                          foregroundColor: Colors.white,
-                          icon: Icons.delete,
-                          label: 'Remover',
-                        ),
                         SlidableAction(
                           onPressed: (context) async {
                             var success = await Navigator.of(context).push(

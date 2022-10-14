@@ -1,4 +1,6 @@
 import 'package:challangesprint4/models/licitacoesParticipando.dart';
+import 'package:challangesprint4/pages/home_page.dart';
+import 'package:challangesprint4/pages/licitacao_lista_page.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -48,10 +50,10 @@ class _LicitacaoDetalhePageState extends State<LicitacaoDetalhePage> {
                                 fontSize: 20, fontWeight: FontWeight.bold),
                           )),
                       Padding(
-                        padding: EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(10),
                         child: Center(
                             child: Text(licitacao.descricao,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 20,
                                 ))),
                       ),
@@ -150,8 +152,6 @@ class _LicitacaoDetalhePageState extends State<LicitacaoDetalhePage> {
               const SizedBox(
                 height: 7,
               ),
-
-
               Transform.scale(
                 scale: 1.5,
                 child: Checkbox(
@@ -176,6 +176,29 @@ class _LicitacaoDetalhePageState extends State<LicitacaoDetalhePage> {
                     });
                   },
                 ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Container(
+                width: 250,
+                child: ElevatedButton(
+                    style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(Colors.red)),
+                    onPressed: () async {
+                      await _licitacaoRepository
+                          .removerLicitacao(licitacao.id!);
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                          content: Text("Licitação removida com sucesso")));
+                      setState(() {
+                        provider.remove(licitacao);
+                         Navigator.of(context).pop(true);
+                      });
+                    },
+                    child: Text(
+                      "Descartar licitação",
+                      style: TextStyle(fontSize: 20),
+                    )),
               )
             ],
           ),
