@@ -17,6 +17,7 @@ class _LicitacoesParticipandoPageState
     return Scaffold(
       appBar: AppBar(
         title: const Text('Licitações que estou participando'),
+        automaticallyImplyLeading: false,
       ),
       body: ListView.builder(
         itemCount: provider.licitacoes.length,
@@ -24,9 +25,7 @@ class _LicitacoesParticipandoPageState
           return ListTile(
             title: Text(provider.licitacoes[index].descricao),
             subtitle: Text(' R\$${provider.licitacoes[index].valor}'),
-            onTap: () {
-              provider.remove(provider.licitacoes[index]);
-            },
+           
           );
         },
       ),

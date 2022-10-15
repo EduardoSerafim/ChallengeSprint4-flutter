@@ -19,7 +19,7 @@ class PaginaInicio extends StatelessWidget {
                 const SizedBox(
                   height: 70,
                 ),
-                const Text("Bem vindo ao painel de licitações da Scania", style: TextStyle(fontSize: 20),),
+                const Text("Bem vindo ao painel de licitações da Scania", style: TextStyle(fontSize: 20, ),),
                 const SizedBox(
                   height: 100,
                 ),
@@ -34,7 +34,7 @@ class PaginaInicio extends StatelessWidget {
                   ),
                 ), 
                 const SizedBox(height:100),
-                const Text("By Infinity - 2022")
+                const Text("By Infinity - 2022", style: TextStyle(fontSize: 16),)
               ],
             ),
           ),

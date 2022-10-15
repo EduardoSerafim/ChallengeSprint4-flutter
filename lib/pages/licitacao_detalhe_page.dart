@@ -192,7 +192,7 @@ class _LicitacaoDetalhePageState extends State<LicitacaoDetalhePage> {
                           content: Text("Licitação removida com sucesso")));
                       setState(() {
                         provider.remove(licitacao);
-                         Navigator.of(context).pop(true);
+                         Navigator.push(context, MaterialPageRoute(builder: (context)=>LicitacaoListaPage()));
                       });
                     },
                     child: Text(

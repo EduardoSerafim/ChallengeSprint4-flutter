@@ -33,7 +33,7 @@ class _LicitacaoListaPageState extends State<LicitacaoListaPage> {
   Widget build(BuildContext context) {
     final provider = Provider.of<LicitacoesParticipando>(context);
     return Scaffold(
-      appBar: AppBar(title: const Text("Licitações de caminhões")),
+      appBar: AppBar(title: const Text("Licitações de caminhões", ),automaticallyImplyLeading: false),
       body: FutureBuilder<List<Licitacao>>(
         future: _futureLicitacoes,
         builder: (context, snapshot) {

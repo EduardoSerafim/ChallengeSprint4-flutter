@@ -1,4 +1,5 @@
 import 'package:challangesprint4/pages/licitacoes_participando_page.dart';
+import 'package:challangesprint4/pages/sobre_page.dart';
 import 'package:flutter/material.dart';
 
 import 'licitacao_lista_page.dart';
@@ -34,7 +35,9 @@ class _HomePageState extends State<HomePage> {
         onPageChanged: setPaginaAtual,
         children:  [
           const LicitacaoListaPage(),
-          LicitacoesParticipandoPage()
+          LicitacoesParticipandoPage(),
+          SobrePage()
+
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -42,7 +45,9 @@ class _HomePageState extends State<HomePage> {
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.list), label: "Todas as Licitações"),
-           BottomNavigationBarItem(icon: Icon(Icons.list_alt_sharp), label: 'Participando'),
+          BottomNavigationBarItem(icon: Icon(Icons.list_alt_sharp), label: 'Participando'),
+          BottomNavigationBarItem(icon: Icon(Icons.info), label: 'Sobre'),
+
         ],
          onTap: (pagina) {
           pc.animateToPage(
