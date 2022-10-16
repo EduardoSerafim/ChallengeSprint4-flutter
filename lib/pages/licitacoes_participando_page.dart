@@ -11,8 +11,7 @@ class LicitacoesParticipandoPage extends StatefulWidget {
       _LicitacoesParticipandoPageState();
 }
 
-class _LicitacoesParticipandoPageState
-    extends State<LicitacoesParticipandoPage> {
+class _LicitacoesParticipandoPageState extends State<LicitacoesParticipandoPage> {
   late Future<List<Licitacao>> _futureLicitacoes;
   final _licitacaoRepository = LicitacaoRepository();
 

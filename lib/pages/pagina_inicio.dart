@@ -1,4 +1,5 @@
 import 'package:challangesprint4/pages/home_page.dart';
+import 'package:challangesprint4/pages/robo_simulacao_page.dart';
 import 'package:flutter/material.dart';
 
 class PaginaInicio extends StatelessWidget {
@@ -28,7 +29,7 @@ class PaginaInicio extends StatelessWidget {
                   child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => HomePage()));
+                            MaterialPageRoute(builder: (context) => RoboSimulacaoPage()));
                       },
                       child: const Text("Entrar", style: TextStyle(fontSize: 20),)
                   ),
