@@ -1,4 +1,3 @@
-import 'package:challangesprint4/models/licitacoesParticipando.dart';
 import 'package:challangesprint4/pages/home_page.dart';
 import 'package:challangesprint4/pages/licitacao_lista_page.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +20,7 @@ class _LicitacaoDetalhePageState extends State<LicitacaoDetalhePage> {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<LicitacoesParticipando>(context);
+   
 
     final licitacao = ModalRoute.of(context)!.settings.arguments as Licitacao;
 
@@ -168,11 +167,6 @@ class _LicitacaoDetalhePageState extends State<LicitacaoDetalhePage> {
 
                       _licitacaoRepository.editarParticipando(licitacao);
 
-                      if (licitacao.participando == 1) {
-                        provider.add(licitacao);
-                      } else {
-                        provider.remove(licitacao);
-                      }
                     });
                   },
                 ),
@@ -191,8 +185,7 @@ class _LicitacaoDetalhePageState extends State<LicitacaoDetalhePage> {
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                           content: Text("Licitação removida com sucesso")));
                       setState(() {
-                        provider.remove(licitacao);
-                         Navigator.push(context, MaterialPageRoute(builder: (context)=>LicitacaoListaPage()));
+                         Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
                       });
                     },
                     child: Text(

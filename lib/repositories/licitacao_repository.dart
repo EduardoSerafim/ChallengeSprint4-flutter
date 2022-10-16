@@ -17,6 +17,22 @@ class LicitacaoRepository {
             dataFinal: DateTime.fromMillisecondsSinceEpoch(row['dataFinal'])))
         .toList();
   }
+  
+  Future<List<Licitacao>> listarLicitacoesParticipando() async {
+    final db = await DatabaseManager().getDatabase();
+    final List<Map<String, dynamic>> rows = await db.query('licitacoes', where: 'participando = true' );
+    late var translateBoolean;
+    return rows
+        .map((row) => Licitacao(
+            id: row['id'],
+            descricao: row['descricao'],
+            orgao: row['orgao'],
+            numeroProcesso: row['numeroProcesso'],
+            valor: row['valor'],
+            participando: row['participando'],
+            dataFinal: DateTime.fromMillisecondsSinceEpoch(row['dataFinal'])))
+        .toList();
+  }
 
   Future<void> cadastrarLicitacao(Licitacao licitacao) async {
     final db = await DatabaseManager().getDatabase();

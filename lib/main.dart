@@ -1,5 +1,3 @@
-
-import 'package:challangesprint4/models/licitacoesParticipando.dart';
 import 'package:challangesprint4/pages/licitacao_cadastro_page.dart';
 import 'package:challangesprint4/pages/licitacao_detalhe_page.dart';
 import 'package:challangesprint4/pages/pagina_inicio.dart';
@@ -19,22 +17,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => LicitacoesParticipando(),
-      child: MaterialApp(
-        title: 'Checkpoint 3 ',
-        theme: ThemeData(
-          primarySwatch: Colors.purple,
-        ),
-        routes: {
-          '/': (context) => PaginaInicio(),
-          'licitacao-lista': (context) => HomePage(),
-          '/licitacao-cadastro':(context) =>  LicitacaoCadastroPage(),
-          '/licitacao-detalhes': (context) => const LicitacaoDetalhePage()
-        },
-        initialRoute: '/',
+    return MaterialApp(
+      title: 'Checkpoint 3 ',
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
       ),
+      routes: {
+        '/': (context) => PaginaInicio(),
+        'licitacao-lista': (context) => HomePage(),
+        '/licitacao-cadastro': (context) => LicitacaoCadastroPage(),
+        '/licitacao-detalhes': (context) => const LicitacaoDetalhePage()
+      },
+      initialRoute: '/',
     );
   }
 }
-

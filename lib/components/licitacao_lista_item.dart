@@ -13,8 +13,9 @@ class LicitacaoListaItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
 
-      leading: const CircleAvatar(
-        backgroundColor: Colors.purple,
+      leading: CircleAvatar(
+        backgroundColor: licitacao.participando == 1 ? Colors.green : Colors.purple
+        ,
         child: Icon(Icons.fire_truck, size: 20, color: Colors.white),
       ),
       title: Text(licitacao.descricao),

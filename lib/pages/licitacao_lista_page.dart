@@ -1,4 +1,3 @@
-import 'package:challangesprint4/models/licitacoesParticipando.dart';
 import 'package:challangesprint4/pages/licitacao_cadastro_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -31,7 +30,6 @@ class _LicitacaoListaPageState extends State<LicitacaoListaPage> {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<LicitacoesParticipando>(context);
     return Scaffold(
       appBar: AppBar(title: const Text("Licitações de caminhões", ),automaticallyImplyLeading: false),
       body: FutureBuilder<List<Licitacao>>(
@@ -64,7 +62,6 @@ class _LicitacaoListaPageState extends State<LicitacaoListaPage> {
                             ) as bool?;
                             if (success != null && success) {
                               setState(() {
-                                provider.remove(licitacao);
                                 carregarLicitacoes();
                               });
                             }
